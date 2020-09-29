@@ -2,7 +2,6 @@
 
 public abstract class GeneralMovement : MonoBehaviour
 {
-    [SerializeField] protected LevelStateController stateController;
     [SerializeField] protected float movementSpeed;
     protected Vector3 movementDirection;
 

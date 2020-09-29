@@ -21,7 +21,7 @@ public class EnemyMovement : GeneralMovement
 
     private void Update()
     {
-        if(stateController.isTheGameLost) return;
+        if(LevelStateController.isTheGameLost) return;
 
         if(Vector3.Distance(transform.position, currentPoint.position) > 0.2f)
         {

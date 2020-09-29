@@ -8,7 +8,7 @@ public class PlayerMovement : GeneralMovement, IDragHandler, IEndDragHandler
 
     private void Update()
     {
-        if(stateController.isTheGameLost) return;
+        if(LevelStateController.isTheGameLost) return;
 
         if(isMoving)
         {
