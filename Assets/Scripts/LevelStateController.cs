@@ -36,7 +36,13 @@ public class LevelStateController : MonoBehaviour
     {
         if(!isLastFloor)
         {
+            PlayerPrefs.SetInt("Floor", SceneManager.GetActiveScene().buildIndex + 1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+             PlayerPrefs.SetInt("Floor", 1);
+             SceneManager.LoadScene(1);
         }
     }
 }

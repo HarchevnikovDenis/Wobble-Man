@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMovement : GeneralMovement
 {
     [SerializeField] private List<Transform> sequencePoints;
+    [SerializeField] private bool isStatic;
     private int currentPointIndex;
     private Transform currentPoint
     {
@@ -16,12 +17,13 @@ public class EnemyMovement : GeneralMovement
 
     private void Start()
     {
-        SetNewDirectionVector(true);
+        if(!isStatic)
+            SetNewDirectionVector(true);
     }
 
     private void Update()
     {
-        if(LevelStateController.isTheGameLost) return;
+        if(LevelStateController.isTheGameLost || isStatic) return;
 
         if(Vector3.Distance(transform.position, currentPoint.position) > 0.2f)
         {
